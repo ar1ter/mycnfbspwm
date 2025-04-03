@@ -1,0 +1,76 @@
+#conf by arter
+
+#applications open#
+
+super + q
+	kitty
+
+super + w
+	firefox
+
+super + e
+	dolphin
+
+alt + space
+	rofi -show run
+
+super + a
+	kate
+
+#kill window
+super + ctrl + x
+	bspc node -c
+
+#change desktops
+super + Tab
+    bspc desktop -f next.local
+
+super + shift + Tab
+    bspc desktop -f prev.local
+
+#---other---
+
+#-sys-
+
+#keyboard layout
+super + space
+    setxkbmap -layout {us,ua}
+
+# exit bspwm
+super + BackSpace
+    bspc quit
+
+#restart bspwm
+super + alt + r
+	bspc wm -r
+
+#-window managment-
+
+# Resize floating window with cursor
+super + {left,down,up,right}
+	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+
+# Rotate tree
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
+
+# set the window state and set the node flags
+super + ctrl + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+#contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
