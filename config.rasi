@@ -1,0 +1,10 @@
+configuration {
+    modi: "run,drun,window";
+
+}
+
+* {
+    font: "Iosevka 8";
+    border: 0;
+    padding: 3px;
+}
